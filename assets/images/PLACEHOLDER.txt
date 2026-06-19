@@ -1,0 +1,17 @@
+PLACEHOLDER — assets/images/
+================================
+
+Drop general site imagery here (hero, about, programs, etc.).
+
+Suggested files referenced by the layout (add later):
+  - hero.jpg            (≈1600x900) Hero background / feature image
+  - about.jpg           (≈800x600)  About section photo
+  - program-1.jpg       (≈600x400)  Program card image
+  - program-2.jpg       (≈600x400)
+  - program-3.jpg       (≈600x400)
+  - cta-bg.jpg          (≈1600x600) Donation call-to-action background
+
+Guidelines:
+  - Prefer .webp or optimized .jpg for photos, .svg for icons/illustrations.
+  - Provide descriptive alt text in the HTML for accessibility.
+  - Keep file sizes small (compress before adding).

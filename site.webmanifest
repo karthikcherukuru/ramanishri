@@ -1,0 +1,21 @@
+{
+  "name": "Ramanishri Foundation",
+  "short_name": "Ramanishri",
+  "description": "Nourishing orphaned children and building brighter futures since 2022.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fbfceb",
+  "theme_color": "#033631",
+  "icons": [
+    {
+      "src": "assets/logo/logo-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo/logo-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

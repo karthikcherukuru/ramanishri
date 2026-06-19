@@ -1,0 +1,17 @@
+PLACEHOLDER — assets/gallery/
+================================
+
+Drop gallery / event photos here.
+
+Suggested naming (add later):
+  - gallery-01.jpg
+  - gallery-02.jpg
+  - gallery-03.jpg
+  - gallery-04.jpg
+  - gallery-05.jpg
+  - gallery-06.jpg
+
+Guidelines:
+  - Keep a consistent aspect ratio (e.g. 4:3 or 1:1) for a tidy grid.
+  - Optimize/compress images before adding.
+  - Always include descriptive alt text in the HTML.
