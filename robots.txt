@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ramanishrifoundation.org/sitemap.xml
+Sitemap: https://www.ramanishrifoundation.com/sitemap.xml

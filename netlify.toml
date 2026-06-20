@@ -1,0 +1,5 @@
+# Netlify configuration
+# Netlify serves clean URLs automatically (e.g. /about -> about.html).
+# The _redirects file 301s any old .html links to the clean path.
+[build]
+  publish = "."
