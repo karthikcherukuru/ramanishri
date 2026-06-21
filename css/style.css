@@ -549,9 +549,17 @@ p {
 ================================================================ */
 .section {
   padding-block: var(--space-xl);
+  /* Soft brand tint — a faint teal wash (#033631 @ ~2.5%) over each section,
+     for a refined, on-brand background without busy artwork. */
+  background-image: linear-gradient(rgba(3, 54, 49, 0.025), rgba(3, 54, 49, 0.025));
 }
 .section--alt {
   background-color: var(--color-bg-alt);
+}
+/* Keep dark sections clean — the teal motif would be invisible/muddy on them. */
+.section.bg-dark,
+.section[style*="--color-primary"] {
+  background-image: none;
 }
 .section__title {
   font-size: var(--fs-2xl);
