@@ -6,6 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="#033631" />
 
+  <!-- Under-development gate: send visitors to the coming-soon page unless
+       they've unlocked the site with the team access code. Remove this block
+       (and the same block on the other pages) to take the site fully live. -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("rf_dev_access") !== "granted") {
+          window.location.replace("/coming-soon");
+        }
+      } catch (e) {
+        window.location.replace("/coming-soon");
+      }
+    })();
+  </script>
+
   <!-- SEO -->
   <title>Ramanishri Foundation | Feeding, Educating &amp; Uplifting Orphaned Children</title>
   <meta name="description" content="Ramanishri Foundation provides meals, education, and care to orphaned children across India — 2,00,000+ meals served. Donate, volunteer, or fundraise today." />

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#033631" />
+  <title>Coming Soon | Ramanishri Foundation</title>
+  <meta name="description" content="The Ramanishri Foundation website is currently under development. We'll be live soon." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="assets/logo/favicon-source.png" />
+  <link rel="apple-touch-icon" href="assets/logo/logo-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primary: #033631;
+      --color-primary-dark: #02201d;
+      --color-primary-light: #0a4f47;
+      --color-accent: #fac63b;
+      --color-accent-dark: #e0ad22;
+      --color-cream: #fbfceb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color: var(--color-cream);
+      background:
+        radial-gradient(120% 120% at 50% 0%, var(--color-primary-light) 0%, var(--color-primary) 45%, var(--color-primary-dark) 100%);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Soft decorative glow */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(60% 50% at 50% 40%, rgba(250, 198, 59, 0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .splash {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      width: 100%;
+      animation: fade-up 0.8s ease both;
+    }
+
+    .splash__logo {
+      width: min(280px, 70vw);
+      height: auto;
+      margin: 0 auto 2.25rem;
+      display: block;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.35));
+    }
+
+    .splash__badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--color-accent);
+      border: 1px solid rgba(250, 198, 59, 0.45);
+      border-radius: 999px;
+      padding: 0.35rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .splash__title {
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .splash__text {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      font-weight: 300;
+      color: rgba(251, 252, 235, 0.82);
+      max-width: 46ch;
+      margin: 0 auto 2.25rem;
+      line-height: 1.7;
+    }
+
+    .splash__team {
+      background: transparent;
+      border: 1px solid rgba(251, 252, 235, 0.35);
+      color: var(--color-cream);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 0.7rem 1.5rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    }
+    .splash__team:hover { background: rgba(251, 252, 235, 0.08); border-color: rgba(251, 252, 235, 0.7); }
+    .splash__team:active { transform: translateY(1px); }
+
+    /* ---- Access-code dialog ---- */
+    dialog.gate {
+      border: none;
+      border-radius: 16px;
+      padding: 0;
+      width: min(380px, 92vw);
+      background: var(--color-cream);
+      color: var(--color-primary);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+    dialog.gate::backdrop {
+      background: rgba(2, 32, 29, 0.65);
+      backdrop-filter: blur(3px);
+    }
+
+    .gate__inner { padding: 1.75rem 1.75rem 1.5rem; }
+
+    .gate__title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    .gate__sub {
+      font-size: 0.85rem;
+      color: #5a6b68;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .gate__input {
+      width: 100%;
+      font-family: inherit;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-align: center;
+      padding: 0.75rem 0.9rem;
+      border: 2px solid #d7ddc8;
+      border-radius: 10px;
+      color: var(--color-primary);
+      background: #fff;
+      transition: border-color 0.2s ease;
+    }
+    .gate__input:focus { outline: none; border-color: var(--color-accent-dark); }
+
+    .gate__error {
+      min-height: 1.1rem;
+      font-size: 0.8rem;
+      color: #c0392b;
+      margin-top: 0.55rem;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .gate__error.is-visible { opacity: 1; }
+
+    .gate__actions {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 1.1rem;
+    }
+    .gate__btn {
+      flex: 1;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .gate__btn--primary { background: var(--color-accent); color: var(--color-primary); }
+    .gate__btn--primary:hover { background: var(--color-accent-dark); }
+    .gate__btn--ghost { background: transparent; color: #5a6b68; border: 1px solid #d7ddc8; }
+    .gate__btn--ghost:hover { background: #eef1de; }
+    .gate__btn:active { transform: translateY(1px); }
+
+    .shake { animation: shake 0.4s ease; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-5px); }
+      80% { transform: translateX(5px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .splash, .shake { animation: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="splash">
+    <img src="assets/logo/logo-white.png" alt="Ramanishri Foundation logo" class="splash__logo" width="280" height="75" />
+
+    <span class="splash__badge">Coming Soon</span>
+    <h1 class="splash__title">This site is under development</h1>
+    <p class="splash__text">
+      We're putting the finishing touches on something meaningful.
+      Please check back soon — and thank you for your patience.
+    </p>
+
+    <button type="button" class="splash__team" id="team-btn">Team member? Enter access code</button>
+  </main>
+
+  <!-- ===== Secret access-code dialog (for team / testing) ===== -->
+  <dialog class="gate" id="gate-dialog" aria-labelledby="gate-title">
+    <form method="dialog" class="gate__inner" id="gate-form">
+      <h2 class="gate__title" id="gate-title">Team Access</h2>
+      <p class="gate__sub">Enter the secret access code to preview the site for testing.</p>
+
+      <input
+        type="password"
+        class="gate__input"
+        id="gate-input"
+        placeholder="Access code"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="false"
+        aria-label="Secret access code"
+      />
+      <p class="gate__error" id="gate-error" role="alert">Incorrect code. Please try again.</p>
+
+      <div class="gate__actions">
+        <button type="button" class="gate__btn gate__btn--ghost" id="gate-cancel">Cancel</button>
+        <button type="submit" class="gate__btn gate__btn--primary">Enter</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script>
+    /* =========================================================
+       TEAM ACCESS — configuration
+       Change the secret code below to whatever you'd like.
+       NOTE: this is a lightweight gate for keeping casual
+       visitors out during testing. The code is visible in
+       this file's source, so it is NOT strong security.
+       ========================================================= */
+    var SECRET_CODE = "Rmn26-2nd";
+    var ACCESS_KEY  = "rf_dev_access";   // must match the guard on the other pages
+    var LANDING_URL = "/";               // where team members go after unlocking
+
+    var dialog = document.getElementById("gate-dialog");
+    var form   = document.getElementById("gate-form");
+    var input  = document.getElementById("gate-input");
+    var error  = document.getElementById("gate-error");
+
+    document.getElementById("team-btn").addEventListener("click", function () {
+      error.classList.remove("is-visible");
+      input.value = "";
+      if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+      } else {
+        // Fallback for very old browsers
+        var code = window.prompt("Enter the secret access code:");
+        if (code !== null) tryUnlock(code);
+        return;
+      }
+      setTimeout(function () { input.focus(); }, 50);
+    });
+
+    document.getElementById("gate-cancel").addEventListener("click", function () {
+      dialog.close();
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      tryUnlock(input.value);
+    });
+
+    function tryUnlock(code) {
+      if (code.trim() === SECRET_CODE) {
+        try { localStorage.setItem(ACCESS_KEY, "granted"); } catch (err) {}
+        window.location.replace(LANDING_URL);
+      } else {
+        error.classList.add("is-visible");
+        form.classList.remove("shake");
+        // reflow to restart the animation
+        void form.offsetWidth;
+        form.classList.add("shake");
+        input.focus();
+        input.select();
+      }
+    }
+  </script>
+</body>
+</html>

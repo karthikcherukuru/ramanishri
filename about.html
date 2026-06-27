@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#033631" />
 
+  <!-- Under-development gate: send visitors to the coming-soon page unless
+       they've unlocked the site with the team access code. -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("rf_dev_access") !== "granted") {
+          window.location.replace("/coming-soon");
+        }
+      } catch (e) {
+        window.location.replace("/coming-soon");
+      }
+    })();
+  </script>
+
   <title>About Ramanishri Foundation | Our Story, Mission &amp; Impact Since 2022</title>
   <meta name="description" content="Learn how Ramanishri Foundation began in 2022 and grew to serve 2,00,000+ meals to orphaned children. Discover our mission, values, and vision for the future." />
   <meta name="robots" content="index, follow" />

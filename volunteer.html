@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#033631" />
 
+  <!-- Under-development gate: send visitors to the coming-soon page unless
+       they've unlocked the site with the team access code. -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("rf_dev_access") !== "granted") {
+          window.location.replace("/coming-soon");
+        }
+      } catch (e) {
+        window.location.replace("/coming-soon");
+      }
+    })();
+  </script>
+
   <title>Volunteer With Ramanishri Foundation | Help Orphaned Children</title>
   <meta name="description" content="Give your time and skills to orphaned children. Explore volunteer opportunities with Ramanishri Foundation — flexible roles, real impact. Apply today." />
   <meta name="robots" content="index, follow" />
